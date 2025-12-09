@@ -25,3 +25,10 @@ adapterパターンは、互換性のないインターフェースを持つク�
 - interface.go
   - adapterで実装したメソッドをinterfaceに持たせる
 - main.go
+
+-----
+
+adapterパターンを使うことで、「LegacyBank」を廃止し、新しく「MordernBank」（ドル決済対応のAPI）を導入したとしても次のステップでDecouplePaymentProcess関数を修正なしで対応できます。
+- MordernBankAdapter を新しく作成
+- main.goの`adapter := `部分を書き換える
+
